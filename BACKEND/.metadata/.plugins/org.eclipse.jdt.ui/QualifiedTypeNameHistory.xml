@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="com.ust.skillhive.repository.InstructorRepository"/>
+    <fullyQualifiedTypeName name="com.ust.skillhive.service.InstructorService"/>
+    <fullyQualifiedTypeName name="com.ust.skillhive.model.Instructor"/>
+    <fullyQualifiedTypeName name="com.ust.skillhive.exception.InstructorNotFoundException"/>
+</qualifiedTypeNameHistroy>

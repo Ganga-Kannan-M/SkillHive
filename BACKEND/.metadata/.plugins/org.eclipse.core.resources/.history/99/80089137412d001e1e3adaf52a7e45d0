@@ -1,0 +1,79 @@
+package com.ust.skillhive.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.ust.skillhive.model.Learner;
+import com.ust.skillhive.service.LearnerService;
+
+
+@RestController
+@RequestMapping("/learner")
+public class LearnerController {
+		
+		@Autowired
+	    private  LearnerService learnerService;
+
+	 
+	    @PostMapping
+	    public ResponseEntity<Learner> createUser(@RequestBody Learner learner) {
+	        
+	        return new ResponseEntity<>(learnerService.createLearner(learner), HttpStatus.CREATED);
+	    }
+
+	    @GetMapping("/{userId}")
+	    public ResponseEntity<User> getUserById(@PathVariable Long userId) {
+	        // Retrieve the user by ID
+	        User user = userService.getUserById(userId);
+
+	        // Return the user with a 200 OK status
+	        return ResponseEntity.ok(user);
+	    }
+
+//	    @GetMapping("/username/{username}")
+//	    public ResponseEntity<User> getUserByUsername(@PathVariable String username) {
+//	        // Retrieve the user by username
+//	        User user = (User) userService.getUserByUsername(username);
+	//
+//	        // Return the user with a 200 OK status
+//	        return ResponseEntity.ok(user);
+//	    }
+
+	    @GetMapping
+	    public ResponseEntity<List<User>> getAllUsers() {
+	        // Retrieve all users
+	        List<User> users = userService.getAllUsers();
+
+	        // Return the list of users with a 200 OK status
+	        return ResponseEntity.ok(users);
+	    }
+
+	    @PutMapping("/{userId}")
+	    public ResponseEntity<User> updateUser(@PathVariable Long userId, @RequestBody UserDTO userDTO) {
+	        // Update the user with the given ID
+	        User updatedUser = userService.updateUser(userId, userDTO);
+
+	        // Return the updated user with a 200 OK status
+	        return ResponseEntity.ok(updatedUser);
+	    }	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+}

@@ -1,0 +1,16 @@
+package com.ust.skillhive;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+@Configurable
+@EnableSwagger2
+public class LearnerApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(LearnerApplication.class, args);
+		
+	}
+
+}

@@ -1,0 +1,5 @@
+package com.ust.skillhive.model;
+
+public class Learner {
+
+}
